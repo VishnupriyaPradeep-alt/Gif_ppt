@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive GIF Viewer</title>
+    <style>
+        #image-display {
+            max-width: 500px;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click to View Images</h1>
+    <img id="image-display" src="cc1.jpg" alt="Image Viewer">
+    <script>
+        // List of images
+        const images = [
+            "cc1.jpg", "cc2.jpg", "cc3.jpg", "cc4.jpg", "cc5.jpg", // Add all your images here
+            "cc43.jpg"
+        ];
+        let currentIndex = 0;
+
+        // Get the image element
+        const imgElement = document.getElementById("image-display");
+
+        // Add click event to cycle through images
+        imgElement.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+            imgElement.src = images[currentIndex];
+        });
+    </script>
+</body>
+</html>
+
